@@ -1,14 +1,9 @@
-# Interop Event Infrastructure (Production Only)
+# Interop Event Infrastructure 
 
-This repo content is the implementation package for interop-event infrastructure rollout.
-
-It is based on patterns from:
-- `20_AREAS/e2e-account/repo`
-- `20_AREAS/terraform-provider/repo`
 
 ## Scope
 
-- Deploy Vidos resources using Terraform in **production only**.
+- Deploy Vidos resources using Terraform.
 - Use the published provider from Terraform Registry.
 - Store Terraform state in `tf-state` branch under `state/production/terraform.tfstate`.
 
