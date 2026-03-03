@@ -1,0 +1,75 @@
+name: terraform-apply-release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  apply_production:
+    if: ${{ !github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: terraform-apply-production
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout terraform code at release tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 1
+          path: infra
+
+      - name: Checkout tf-state branch
+        uses: actions/checkout@v4
+        with:
+          ref: tf-state
+          fetch-depth: 1
+          path: tf-state
+
+      - name: Ensure state path exists
+        run: mkdir -p tf-state/state/production
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.0
+
+      - name: Configure Terraform for published provider
+        run: |
+          cat > "$RUNNER_TEMP/terraformrc-production" <<EOF2
+          provider_installation {
+            direct {}
+          }
+          EOF2
+
+      - name: Terraform init
+        working-directory: infra
+        env:
+          TF_CLI_CONFIG_FILE: ${{ runner.temp }}/terraformrc-production
+          TF_VAR_vidos_api_key: ${{ secrets.VIDOS_API_KEY }}
+          TF_VAR_vidos_region: ${{ secrets.VIDOS_REGION }}
+        run: terraform init
+
+      - name: Terraform apply (production)
+        working-directory: infra
+        env:
+          TF_CLI_CONFIG_FILE: ${{ runner.temp }}/terraformrc-production
+          TF_VAR_vidos_api_key: ${{ secrets.VIDOS_API_KEY }}
+          TF_VAR_vidos_region: ${{ secrets.VIDOS_REGION }}
+        run: terraform apply -auto-approve -state=../tf-state/state/production/terraform.tfstate
+
+      - name: Commit and push updated state (tf-state)
+        working-directory: tf-state
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f state/production/terraform.tfstate
+          git commit -m "chore(terraform): update production state for ${TAG}" || exit 0
+          git push

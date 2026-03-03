@@ -1,0 +1,29 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Terraform lock file (keep by default)
+#!.terraform.lock.hcl
+
+# CLI configuration files / credentials
+.terraform.d/
+
+# Plan outputs
+*.tfplan
+*.plan
+
+# Local tooling
+.env
+.env.*
+.DS_Store
