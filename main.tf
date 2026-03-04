@@ -70,6 +70,22 @@ j/C8CPRpR5CzvSXEiUz5WA==
   PEM
   )
 
+  idakto  = trimspace(<<-PEM
+  -----BEGIN CERTIFICATE-----
+MIIB2TCCAX+gAwIBAgIJAI5LEB+QbO+3MAoGCCqGSM49BAMCMCUxCzAJBgNVBAYT
+AkZSMRYwFAYDVQQDDA1JREFLVE8gSUFDQSA0MB4XDTI0MDkyNjEyMzQ1M1oXDTI5
+MDkyNTEyMzQ1M1owJTELMAkGA1UEBhMCRlIxFjAUBgNVBAMMDUlEQUtUTyBJQUNB
+IDQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARMophaPOvIcnsKuxs3iGxJA3ky
+Qx3pHeC0LWj8RNPLtYWAcPJq8bB5PSyOkGtB6XcGUTJukaBxU//5cAe2I18po4GX
+MIGUMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQW
+BBS2EQayXDKCQSR99d/ve3ZXwxWPpzAaBgNVHRIEEzARgQ9pYWNhQGlkYWt0by5j
+b20wMwYDVR0fBCwwKjAooCagJIYiaHR0cDovL2NybC5jaG9wcGVyLmlkbGFiLmxp
+dmU6NTU1NTAKBggqhkjOPQQDAgNIADBFAiAX1wM1La0uufb2yA4jZ+11FfF6hcx3
+ER8/kcC52teviQIhALNwfW4Zusu4QD8QFxRKrLyi8UVWpDXI5G7rHRnIbNPf
+-----END CERTIFICATE-----
+  PEM
+  )
+  
   eudi_test_issuer = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
 MIIC3TCCAoOgAwIBAgIUEwybFc9Jw+az3r188OiHDaxCfHEwCgYIKoZIzj0EAwMw
@@ -108,6 +124,8 @@ resource "vidos_validator_instance" "authorizer" {
           { type = "pem", pem = local.igrant_sd_jwt },
           { type = "pem", pem = local.igrant_mdoc_iaca },
           { type = "pem", pem = local.eudi_test_issuer },
+          { type = "pem", pem = local.idakto },
+          { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical" },
         ]
       }
     }
