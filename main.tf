@@ -85,7 +85,7 @@ ER8/kcC52teviQIhALNwfW4Zusu4QD8QFxRKrLyi8UVWpDXI5G7rHRnIbNPf
 -----END CERTIFICATE-----
   PEM
   )
-  
+
   eudi_test_issuer = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
 MIIC3TCCAoOgAwIBAgIUEwybFc9Jw+az3r188OiHDaxCfHEwCgYIKoZIzj0EAwMw
@@ -125,7 +125,7 @@ resource "vidos_validator_instance" "authorizer" {
           { type = "pem", pem = local.igrant_mdoc_iaca },
           { type = "pem", pem = local.eudi_test_issuer },
           { type = "pem", pem = local.idakto },
-          { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical" },
+          { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical", vicalTrustedCertificates = [] },
         ]
       }
     }
