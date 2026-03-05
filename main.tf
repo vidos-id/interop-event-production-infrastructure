@@ -53,6 +53,27 @@ GTi6Mr2SZXToF2FBWAe4
   PEM
   )
 
+  thales_interop_2023_iaca = trimspace(<<-PEM
+ -----BEGIN CERTIFICATE-----
+MIIC2jCCAoCgAwIBAgIUbwYRRTaFwEbfFVrYLdVvK4SHo8EwCgYIKoZIzj0EAwIw
+XDELMAkGA1UEBhMCQ1oxCzAJBgNVBAgMAkNaMQ8wDQYDVQQKDAZUaGFsZXMxDDAK
+BgNVBAsMA0RJUzEhMB8GA1UEAwwYVGhhbGVzIEludGVyb3AgMjAyMyBJQUNBMB4X
+DTIzMDgxNzEwMzYzNVoXDTMzMDgxNDEwMzYzNVowXDELMAkGA1UEBhMCQ1oxCzAJ
+BgNVBAgMAkNaMQ8wDQYDVQQKDAZUaGFsZXMxDDAKBgNVBAsMA0RJUzEhMB8GA1UE
+AwwYVGhhbGVzIEludGVyb3AgMjAyMyBJQUNBMFkwEwYHKoZIzj0CAQYIKoZIzj0D
+AQcDQgAExqAZg984per+IzzDGEoZllLknp9hhosfoOM77fwa7FPQjXAAJ0wyNzNc
+QfGY+bJ5+ZYZJTORSeJVoYlhsRGTXqOCAR4wggEaMB0GA1UdDgQWBBRLUT7uSXOF
+M/kxBy89nHsV24KNbDAfBgNVHSMEGDAWgBRLUT7uSXOFM/kxBy89nHsV24KNbDAP
+BgNVHRMBAf8EBTADAQH/MAsGA1UdDwQEAwIBBjBZBgNVHRIEUjBQgRZtZGxAYWNs
+b3VkLmdlbWFsdG8uY29thjZodHRwczovL2Rpdy5kd2cuZ3dhZmV1LmV3MS5ncC1k
+ZXYwMi5hY2xvdWQuZ2VtYWx0by5jb20wXwYDVR0fBFgwVjBUoFKgUIZOaHR0cHM6
+Ly9kaXcuZHdnLmd3YWZldS5ldzEuZ3AtZGV2MDIuYWNsb3VkLmdlbWFsdG8uY29t
+L2NybC9pbnRlcm9wMjAyM0lBQ0EuY3JsMAoGCCqGSM49BAMCA0gAMEUCIQCMky6+
+FCBuv2vc7gdefiFBf5f5+rQ4ke7z9aLrNIQVOQIgY5W7vMdFICxSCBjl2WcQH0Uj
+s9yflsKGDH5YB2FSOaQ=
+-----END CERTIFICATE----- 
+  PEM)
+
   france_identite = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
 MIIDUzCCAvmgAwIBAgISESHtNjf+2KAQ0ttWtR9EhAAPMAoGCCqGSM49BAMCMIHF
@@ -149,6 +170,7 @@ resource "vidos_validator_instance" "authorizer" {
           { type = "pem", pem = local.eudi_test_issuer },
           { type = "pem", pem = local.idakto },
           { type = "pem", pem = local.france_identite },
+          { type = "pem", pem = local.thales_interop_2023_iaca },
           { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical", vicalTrustedCertificates = [] },
         ]
       }
