@@ -72,7 +72,8 @@ L2NybC9pbnRlcm9wMjAyM0lBQ0EuY3JsMAoGCCqGSM49BAMCA0gAMEUCIQCMky6+
 FCBuv2vc7gdefiFBf5f5+rQ4ke7z9aLrNIQVOQIgY5W7vMdFICxSCBjl2WcQH0Uj
 s9yflsKGDH5YB2FSOaQ=
 -----END CERTIFICATE----- 
-  PEM)
+  PEM
+  )
 
   france_identite = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
