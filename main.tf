@@ -193,7 +193,8 @@ dGlhY2FtZGwuY3JsLnBlbTAKBggqhkjOPQQDAgNHADBEAiBUZPEHpfFqC3ZdGr0h
 0aPjuQzbENZgVS5LjXZJD7aVewIgaKXU7bB1xsAWTM9of02RQiYjjOB8qzihAtCZ
 q5nUCQY=
 -----END CERTIFICATE-----  
-  PEM)
+  PEM
+  )
 
   kereval_pid_provided = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
