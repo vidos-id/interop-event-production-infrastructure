@@ -176,6 +176,25 @@ fn1v1k4WaJY0HOf17joobJUF3SMmPgU72w==
   PEM
   )
 
+  toppan_vical_pem = trimspace(<<-PEM
+-----BEGIN CERTIFICATE-----
+MIICcTCCAhigAwIBAgIJDTFW6bRMV73sMAoGCCqGSM49BAMCMEYxCzAJBgNVBAYT
+AlBIMQ4wDAYDVQQIDAVQSC0wMDELMAkGA1UECgwCREwxCzAJBgNVBAsMAlZSMQ0w
+CwYDVQQDDARnb0lEMB4XDTI1MTEwNDAwMDAwMFoXDTM0MTEwNDIzNTk1OVowRjEL
+MAkGA1UEBhMCUEgxDjAMBgNVBAgMBVBILTAwMQswCQYDVQQKDAJETDELMAkGA1UE
+CwwCVlIxDTALBgNVBAMMBGdvSUQwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQJ
+8tbOXpAPblIxbmGFLI0YosOW1XgmgwgQwvn8enIENSowpyd2f6dVqL36ZNPxRtXr
+ZJhTmfYo24dIiPt9RNVko4HuMIHrMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYDVR0P
+AQH/BAQDAgEGMB0GA1UdDgQWBBQCwqigg1O1afapyqOvMPdUGhT9KjArBgNVHRAE
+JDAigA8yMDI1MTEwNDAwMDAwMFqBDzIwMzAxMTA0MjM1OTU5WjAmBgNVHRIEHzAd
+hhtodHRwczovL3RvcHBhbnNlY3VyaXR5LmNvbS8wUQYDVR0fBEowSDBGoESgQoZA
+aHR0cHM6Ly9kZXYtbHMuZ29pZGh1Yi50b3BwYW5hcHBzLmNvbS9jaWQvaGlkdGVz
+dGlhY2FtZGwuY3JsLnBlbTAKBggqhkjOPQQDAgNHADBEAiBUZPEHpfFqC3ZdGr0h
+0aPjuQzbENZgVS5LjXZJD7aVewIgaKXU7bB1xsAWTM9of02RQiYjjOB8qzihAtCZ
+q5nUCQY=
+-----END CERTIFICATE-----  
+  PEM)
+
   kereval_pid_provided = trimspace(<<-PEM
 -----BEGIN CERTIFICATE-----
 MIIDZzCCAwygAwIBAgIQd7kICyv7cjB3M0539PUdCTAKBggqhkjOPQQDAjCBjzEe
@@ -221,7 +240,9 @@ resource "vidos_validator_instance" "authorizer" {
           { type = "pem", pem = local.thales_interop_2023_iaca },
           { type = "pem", pem = local.kereval_pid_ds_0002 },
           { type = "pem", pem = local.kereval_pid_provided },
+          { type = "pem", pem = local.toppan_vical_pem },
           { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical", vicalTrustedCertificates = [] },
+          { type = "vical-url", url = "https://dev-ls.goidonpremise.toppanapps.com:460/api/document/vicallist/goID", vicalTrustedCertificates = [] },
         ]
       }
     }
