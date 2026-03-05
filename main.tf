@@ -153,6 +153,53 @@ FgGdpr4oyrFB9daZyRIcP90=
 -----END CERTIFICATE-----
   PEM
   )
+
+  kereval_pid_ds_0002 = trimspace(<<-PEM
+-----BEGIN CERTIFICATE-----
+MIIC5TCCAmqgAwIBAgIUaELtJp2om46hBawzu4NUcQSMswQwCgYIKoZIzj0EAwIw
+XDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJ
+IFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4X
+DTI0MDcwMTEwMDMwNloXDTI1MDkyNDEwMDMwNVowVDEWMBQGA1UEAwwNUElEIERT
+IC0gMDAwMjEtMCsGA1UECgwkRVVESSBXYWxsZXQgUmVmZXJlbmNlIEltcGxlbWVu
+dGF0aW9uMQswCQYDVQQGEwJVVDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOuk
++lFCfHdsK5Af4NM66Eif26F9yy9cE6B5hYBQmlUKEuTkOoMeuKzxSd+oga31wWW1
+lDrzkYmsmABOh9V18lSjggEQMIIBDDAfBgNVHSMEGDAWgBSzbLiRFxzXpBpmMYdC
+4YvAQMyVGzAWBgNVHSUBAf8EDDAKBggrgQICAAABAjBDBgNVHR8EPDA6MDigNqA0
+hjJodHRwczovL3ByZXByb2QucGtpLmV1ZGl3LmRldi9jcmwvcGlkX0NBX1VUXzAx
+LmNybDAdBgNVHQ4EFgQUBH0OQ9ftGRPVb2hSTkvn8wYTEsowDgYDVR0PAQH/BAQD
+AgeAMF0GA1UdEgRWMFSGUmh0dHBzOi8vZ2l0aHViLmNvbS9ldS1kaWdpdGFsLWlk
+ZW50aXR5LXdhbGxldC9hcmNoaXRlY3R1cmUtYW5kLXJlZmVyZW5jZS1mcmFtZXdv
+cmswCgYIKoZIzj0EAwIDaQAwZgIxAJH5vz/HHPMtQbWLwuLR9fogdbKbhqTEaWL8
+WWcaW4aDGddH8gw8FwvpJ5rc5D9KewIxANpfvTdi15xvr6mjtqwoMpTFzFfC/xxw
+fn1v1k4WaJY0HOf17joobJUF3SMmPgU72w==
+-----END CERTIFICATE-----
+  PEM
+  )
+
+  kereval_pid_provided = trimspace(<<-PEM
+-----BEGIN CERTIFICATE-----
+MIIDZzCCAwygAwIBAgIQd7kICyv7cjB3M0539PUdCTAKBggqhkjOPQQDAjCBjzEe
+MBwGA1UEAxMVUmVhZGVyIENBIENlcnRpZmljYXRlMQswCQYDVQQGEwJGUjEVMBMG
+A1UEChMMRVVESVcgVW5mb2xkMR4wHAYDVQQLExVDZXJ0aWZpY2F0ZSBBdXRob3Jp
+dHkxKTAnBgNVBAUTIDQwNDE0MjQzNDQ0NTQ2NDc0ODQ5NEE0QjRDNEQ0RTRGMB4X
+DTI2MDMwMjEwMTU0MVoXDTI5MDYwMTEwMTU0MVowgacxRDBCBgNVBAMTO21kb2Mg
+UmVhZGVyIEF1dGhlbnRpY2F0aW9uIENlcnRpZmljYXRlIHdhbGxldC5rZXJldmFs
+LmNsb3VkMQswCQYDVQQGEwJGUjERMA8GA1UECBMIQnJldGFnbmUxLTArBgNVBAce
+JABUAGgAbwByAGkAZwBuAOkALQBGAG8AdQBpAGwAbABhAHIAZDEQMA4GA1UEChMH
+S2VyZXZhbDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKcbISA6RyXEjXhAoRgp
+tBTdFtJyXcqgSIL98+40Eg8ZLmdeQRw0jYrVPlFJuJYN383qC/3sd0Dh3VlYFLfc
+96ejggEuMIIBKjAdBgNVHQ4EFgQUxYWbP2xeGeOmEbexwq/AIlnEgf4wDgYDVR0P
+AQH/BAQDAgeAMB8GA1UdEQQYMBaCFHdhbGxldC5rZXJldmFsLmNsb3VkMBUGA1Ud
+JQEB/wQLMAkGByiBjF0FAQYwUAYDVR0fBEkwRzBFoEOgQYY/aHR0cHM6Ly91bmZv
+bGQubWRvYy5vbmxpbmUvQ2VydGlmaWNhdGVzL1JlYWRlckNhQ2VydGlmaWNhdGUu
+Y3JsMB8GA1UdIwQYMBaAFA33GKaKWy5TjHiq6T7zpOB7cY6hME4GA1UdEgRHMEWG
+G2h0dHBzOi8vdW5mb2xkLm1kb2Mub25saW5lL4EmcmVhZGVyY2FjZXJ0aWZpY2F0
+ZUB1bmZvbGQubWRvYy5vbmxpbmUwCgYIKoZIzj0EAwIDSQAwRgIhAIUC7TjtLHbi
+JMnUMBeHOxUURjYMUUfp0sMkDx7dzjiCAiEAoKCJ/LNR1S1rAN97NHrKumm7bLgc
+H6Ld4PWm1reJGk0=
+-----END CERTIFICATE-----  
+  PEM
+  )
 }
 
 resource "vidos_validator_instance" "authorizer" {
@@ -172,6 +219,8 @@ resource "vidos_validator_instance" "authorizer" {
           { type = "pem", pem = local.idakto },
           { type = "pem", pem = local.france_identite },
           { type = "pem", pem = local.thales_interop_2023_iaca },
+          { type = "pem", pem = local.kereval_pid_ds_0002 },
+          { type = "pem", pem = local.kereval_pid_provided },
           { type = "vical-url", url = "https://unfold.mdoc.online/trustedlists/Vical.vical", vicalTrustedCertificates = [] },
         ]
       }
